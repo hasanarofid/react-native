@@ -10,6 +10,7 @@ const Pemain =(props)=>{
             <Text>Klub Goat adalah : {props.klub}</Text>
         </View>
     )
+    
 
 }
 
