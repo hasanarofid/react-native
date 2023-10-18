@@ -16,6 +16,8 @@ import gambar from './src/gambar';
 import hitungPajak from './src/hitungPajak';
 import navigation1 from './src/navigation1';
 import webView from './src/webView';
+import state3 from './src/state3';
+
 
 
 
@@ -24,4 +26,4 @@ import webView from './src/webView';
 
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => webView);
+AppRegistry.registerComponent(appName, () => state3);
