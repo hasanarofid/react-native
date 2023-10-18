@@ -17,14 +17,8 @@ import hitungPajak from './src/hitungPajak';
 import navigation1 from './src/navigation1';
 import webView from './src/webView';
 import state3 from './src/state3';
-
-
-
-
-
-
-
-
+import NavDrawer from './src/NavDrawer';
+import tab1 from './src/tab1';
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => navigation1);
+AppRegistry.registerComponent(appName, () => tab1);

@@ -6,10 +6,17 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 function HomeScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Halaman Depan</Text>
+      <Text>Home</Text>
       <Button
         title="Halaman Detail"
-        onPress={() => navigation.navigate('Details')}
+        onPress={() => {
+          /* 1. Navigate to the Details route with params */
+          navigation.navigate('Details', {
+            itemId: 86,
+            otherParam: 'anything you want here',
+          });
+        }}
+      
       />
     </View>
   );
@@ -21,7 +28,9 @@ function DetailsScreen({ navigation }) {
       <Text>Halaman Detail</Text>
       <Button
         title="Halaman Depan"
-        onPress={() => navigation.navigate('Home')}
+        onPress={() =>
+          navigation.navigate('Home')
+        }
       />
     </View>
   );
