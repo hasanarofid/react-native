@@ -19,6 +19,8 @@ import webView from './src/webView';
 import state3 from './src/state3';
 import NavDrawer from './src/NavDrawer';
 import tab1 from './src/tab1';
+import TabsMaterial from './src/TabsMaterial';
+
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => tab1);
+AppRegistry.registerComponent(appName, () => TabsMaterial);
