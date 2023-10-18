@@ -24,6 +24,7 @@ import state3 from './src/state3';
 
 
 
+
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => state3);
+AppRegistry.registerComponent(appName, () => navigation1);

@@ -1,46 +1,43 @@
-import React, { Component } from 'react'
-import { Text, StyleSheet, View, Button, Touchable, TouchableOpacity, Dimensions } from 'react-native'
+import * as React from 'react';
+import { Button, View, Text } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-function coba_alert(){
-    const lebar = Dimensions.get('window').width;
-    const tinggi = Dimensions.get('window').height;
-
-  alert(' dimensi layar  lebar : '+lebar+'  tinggi : '+tinggi);
+function HomeScreen({ navigation }) {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Halaman Depan</Text>
+      <Button
+        title="Halaman Detail"
+        onPress={() => navigation.navigate('Details')}
+      />
+    </View>
+  );
 }
 
-export default class navigation1 extends Component {
-    state = {
-        Mobil : [
-            {id : 1, name : "Toyota"},
-            {id : 2, name : "Honda"},
-            {id : 3, name : "Suzuki"},
-            {id : 4, name : "Bmw"},
-            {id : 5, name : "Mazda"},
-        ]
-    }
-    klik = (Mobil) =>{
-      alert('Tampilkan '+ Mobil)
-    }
-  render() {
-    return (
-      <View>
-        <Text> Belajar Props Class </Text>
-        {
-          this.state.Mobil.map((item,index)=>(
-            <TouchableOpacity onPress={()=>this.klik(item.name)}>
-              <Text>{item.name}</Text>
-
-            </TouchableOpacity>
-          ))
-        }
-        <Button 
-          title='Tampilkan alert'
-          onPress={coba_alert}
-        />
-        
-      </View>
-    )
-  }
+function DetailsScreen({ navigation }) {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Halaman Detail</Text>
+      <Button
+        title="Halaman Depan"
+        onPress={() => navigation.navigate('Home')}
+      />
+    </View>
+  );
 }
 
-const styles = StyleSheet.create({})
+const Stack = createNativeStackNavigator();
+
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Details" component={DetailsScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+export default App;
