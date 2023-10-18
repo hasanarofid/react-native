@@ -14,10 +14,14 @@ import layouting from './src/layouting';
 import flex from './src/flex';
 import gambar from './src/gambar';
 import hitungPajak from './src/hitungPajak';
+import navigation1 from './src/navigation1';
+import webView from './src/webView';
+
+
 
 
 
 
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => hitungPajak);
+AppRegistry.registerComponent(appName, () => webView);
